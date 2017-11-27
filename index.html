@@ -1,0 +1,119 @@
+<html>
+<head>
+<style>
+html{
+  margin: 20px 10px auto;
+  font-family: arial,sans-serif;
+} 
+.nav:after,
+.nav:before {
+  content:"";
+  display: table;
+} 
+.nav:after {
+  clear:both;
+  overflow:hidden;
+}
+.nav {
+  zoom: 1;
+  margin-left: 20px;
+      padding-bottom: 3px;
+}
+.nav li {
+  list-style: none outside none;
+  float: left;
+  position: relative;
+}
+.nav .active {
+  z-index: 3;
+}
+.nav li:before,
+.nav li:after,
+.nav  a:before,
+.nav  a:after {
+  content:"";
+  position: absolute;
+  bottom:0;
+
+}
+
+.nav a {
+  float: left;
+  padding: 10px 40px;
+  text-decoration: none;
+  color: #fff;
+  background: rgb(97, 142, 70);
+  border-radius: 5px 5px 0 0;
+  -webkit-transform: perspective(30) rotateX(10deg);
+}
+.nav .active a {
+  background: #F66599;
+  color:#BE3569;
+  -webkit-transform: perspective(30) rotateX(10deg);
+}
+
+
+
+.nav  a:before {
+  left:-20px; 
+}
+.nav  a:after {
+  right: -20px;
+}
+
+.nav .active:before,
+.nav .active:after {
+  z-index: 1;
+  background: #F66599;
+}
+
+.nav li:first-child a:before,
+.nav li:last-child a:after {
+  background-color: #fff;
+}
+.tab-content {
+  background: rgba(60, 118, 61, 0.17);;
+  color:#444444;
+  padding: 20px;
+}
+.tab-pane {
+  display: none;
+}
+.tab-pane.active {
+  display: block;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+ $(function(){
+    $('#myTab a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    })
+  });
+</script>
+</head>
+<body>
+<ul class="nav nav-tabs" id="myTab">
+  <li class="active"><a href="#home">Home</a></li>
+  <li><a href="#portfolio">Portfolio</a></li>
+  <li><a href="#messages">Messages</a></li>
+  <li><a href="#settings">Settings</a></li>
+</ul>
+ 
+<div class="tab-content">
+  <div class="tab-pane active" id="home">Home page</div>
+  <div class="tab-pane" id="portfolio">Portfolio page</div>
+  <div class="tab-pane" id="messages">Messages page</div>
+  <div class="tab-pane" id="settings">Setting page</div>
+</div>
+</body>
+</html>
